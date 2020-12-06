@@ -19,6 +19,7 @@ public class ReadingTextFile {
     Scanner reader;
     private int answer;
     ArrayList list;
+    ArrayList stringList;
 
     public ReadingTextFile() throws FileNotFoundException {
         this.reader = new Scanner(new File("numbers.txt"));
@@ -27,6 +28,21 @@ public class ReadingTextFile {
 
             int line = this.reader.nextInt();
             list.add(line);
+
+        }
+    }
+
+    public ArrayList getStringList() {
+        return stringList;
+    }
+
+    public void ReadingTextFileStrings() throws FileNotFoundException {
+        this.reader = new Scanner(new File("passwords.txt"));
+        this.stringList = new ArrayList();
+        while (this.reader.hasNextLine()) {
+            String line = this.reader.nextLine();
+
+            stringList.add(line);
 
         }
 
@@ -46,9 +62,9 @@ public class ReadingTextFile {
                     int first = (int) list.get(i);
                     int second = (int) list.get(i2);
                     int third = (int) list.get(i3);
-                    if (first+second+third == 2020) {
-                        System.out.println(first + " "+second+" "+third);
-                        return first*second*third;
+                    if (first + second + third == 2020) {
+                        System.out.println(first + " " + second + " " + third);
+                        return first * second * third;
                     }
 
                     i3++;
