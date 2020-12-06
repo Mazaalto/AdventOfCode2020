@@ -27,11 +27,14 @@ public class Main {
           
           int timesCorrect = 0;
           
-          for (int i = 0; i < list.size(); i++) {
-              if (passwordChecker.isCorrect(list.get(i))) {
-                  timesCorrect++;
-              }
-          }
+          System.out.println(passwordChecker.isCorrectPartTwo("2-9 c: ccccccccc"));
+          
+        for (int i = 0; i < list.size(); i++) {
+            if (passwordChecker.isCorrectPartTwo(list.get(i))) {
+                System.out.println(list.get(i));
+                timesCorrect++;
+            }
+        }
         System.out.println(timesCorrect);
 
     }

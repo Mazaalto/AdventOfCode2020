@@ -35,4 +35,27 @@ public class passwordChecker {
         return false;
     }
 
+    public static boolean isCorrectPartTwo(String line) {
+        //1-3 a: abcde is valid: position 1 contains a and position 3 does not.
+        boolean returnValue = false;
+
+        String[] pieces2 = line.split(" ");
+        String[] rules2 = pieces2[0].split("-");
+
+        int position1 = Integer.parseInt(rules2[0]);
+        int position2 = Integer.parseInt(rules2[1]);
+
+        char toFind2 = pieces2[1].charAt(0);
+        String password2 = pieces2[2];
+
+        if ((password2.charAt(position1 - 1) == toFind2) && (password2.charAt(position2 - 1) != toFind2)) {
+            returnValue = true;
+        } else if ((password2.charAt(position1 - 1) != toFind2) && (password2.charAt(position2 - 1) == toFind2)) {
+            returnValue = true;
+        }
+
+        return returnValue;
+
+    }
+
 }
