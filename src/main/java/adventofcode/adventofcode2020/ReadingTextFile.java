@@ -37,7 +37,7 @@ public class ReadingTextFile {
     }
 
     public void ReadingTextFileStrings() throws FileNotFoundException {
-        this.reader = new Scanner(new File("passwords.txt"));
+        this.reader = new Scanner(new File("trees.txt"));
         this.stringList = new ArrayList();
         while (this.reader.hasNextLine()) {
             String line = this.reader.nextLine();
